@@ -1,0 +1,29 @@
+{
+  "name": "bots-fingerprint-arcades",
+  "version": "1.0.0",
+  "description": "Reverse-engineering harness for FingerprintJS v4 as deployed on arcades.click/fpjs. Captures plaintext payload via CompressionStream chokepoint, iterates value-tamper variants against the live /api/fpjs/event oracle, hunts for verdict-flipping signals. Companion to FPJS.md.",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "postinstall": "npx playwright install chromium firefox",
+    "start": "node main.mjs",
+    "main": "node main.mjs",
+    "recon": "node recon.mjs",
+    "verdict": "node verdict.mjs",
+    "mitm": "node mitm.mjs",
+    "tamper": "node tamper.mjs",
+    "bypass": "node bypass.mjs",
+    "bisect": "node bisect.mjs",
+    "netdump": "node netdump.mjs",
+    "signals": "node signals.mjs",
+    "diff": "node diff.mjs",
+    "api-trace": "node api-trace.mjs"
+  },
+  "dependencies": {
+    "playwright": "^1.57.0",
+    "prompts": "^2.4.2"
+  }
+}
